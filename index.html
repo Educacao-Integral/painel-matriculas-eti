@@ -7,9 +7,36 @@
 :root{--green:#135c37;--green2:#1d7548;--green3:#eaf5ef;--ink:#173026;--muted:#60746b;--line:#d9e5de;--bg:#f4f7f5;--card:#fff;--amber:#9a6500;--red:#a73333;--shadow:0 8px 24px rgba(20,55,38,.07)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}button,input,select{font:inherit}.top{background:linear-gradient(135deg,#0f4f30,#1b7647);color:#fff;padding:22px 0 28px}.wrap{max-width:1440px;margin:auto;padding:0 22px}.toprow{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}.brand small{display:block;opacity:.78;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.brand h1{margin:5px 0 7px;font-size:clamp(24px,3.2vw,40px);line-height:1.08}.brand p{margin:0;opacity:.88}.top-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.btn{border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.1);color:#fff;padding:9px 12px;border-radius:10px;cursor:pointer;font-weight:650}.btn:hover{background:rgba(255,255,255,.18)}.update{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:13px}.pill{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.18);padding:6px 9px;border-radius:999px}.navwrap{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.nav{display:flex;gap:4px;overflow:auto;padding:9px 22px;max-width:1440px;margin:auto}.nav button{white-space:nowrap;border:0;background:transparent;padding:9px 12px;border-radius:9px;color:#52685e;cursor:pointer;font-weight:700}.nav button.active{background:var(--green3);color:var(--green)}main{max-width:1440px;margin:22px auto 60px;padding:0 22px}.panel{display:none}.panel.active{display:block}.kpis{display:grid;grid-template-columns:repeat(6,minmax(150px,1fr));gap:12px;margin-bottom:18px}.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px;box-shadow:var(--shadow)}.kpi .lab{color:var(--muted);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}.kpi .val{font-size:27px;font-weight:850;margin-top:5px}.kpi .sub{font-size:12px;color:var(--muted);margin-top:3px}.grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:var(--shadow);margin-bottom:14px}.card h2,.card h3{margin:0 0 12px}.sectionhead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}.sectionhead h2{margin:0}.muted{color:var(--muted);font-size:13px}.filters{display:grid;grid-template-columns:minmax(240px,1fr) 220px 220px auto;gap:8px;margin-bottom:12px}.filters input,.filters select{border:1px solid var(--line);background:#fff;padding:10px 11px;border-radius:10px;min-width:0}.filters .clear{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;cursor:pointer}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#fff}.tablewrap.tall{max-height:68vh}table{border-collapse:collapse;width:100%;font-size:13px}th,td{padding:9px 10px;border-bottom:1px solid #edf2ef;text-align:left;vertical-align:middle}th{position:sticky;top:0;background:#f7faf8;color:#496057;font-size:11px;text-transform:uppercase;letter-spacing:.04em;z-index:1}td.num,th.num{text-align:right;white-space:nowrap}td.school{min-width:260px}.badge{display:inline-flex;align-items:center;gap:4px;background:var(--green3);color:var(--green);border-radius:999px;padding:3px 7px;font-size:11px;font-weight:800}.badge.warn{background:#fff4dc;color:#8b6206}.badge.red{background:#fdebea;color:#9f3232}.barrow{display:grid;grid-template-columns:minmax(160px,1fr) 2fr 58px;align-items:center;gap:9px;margin:9px 0;font-size:12px}.bar{height:8px;border-radius:999px;background:#edf2ef;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#1c7246,#51a371);border-radius:999px}.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.summary>div{background:#f8fbf9;border:1px solid #e3ece7;padding:12px;border-radius:11px}.summary b{display:block;font-size:20px}.notice{border-left:4px solid var(--green2);background:#f4faf6;padding:12px 14px;border-radius:9px;margin-bottom:12px}.warning{border-left-color:#bd7a00;background:#fff8e8}.chart{width:100%;height:230px;background:#fbfdfc;border:1px solid #e7eeea;border-radius:12px;padding:8px}.chart svg{width:100%;height:100%}.chartlabels{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px;margin-top:7px}.rank{counter-reset:rank}.rankitem{display:grid;grid-template-columns:28px minmax(180px,1fr) 120px 70px;gap:8px;align-items:center;padding:9px 0;border-bottom:1px solid #edf2ef}.rankitem:before{counter-increment:rank;content:counter(rank);display:grid;place-items:center;width:23px;height:23px;border-radius:50%;background:var(--green3);color:var(--green);font-size:11px;font-weight:850}.footer{padding:26px 0 40px;color:#6d8077;font-size:12px;text-align:center}.mobile-note{display:none}@media(max-width:1100px){.kpis{grid-template-columns:repeat(3,1fr)}.grid2{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.summary{grid-template-columns:repeat(2,1fr)}}@media(max-width:700px){.wrap,main{padding-left:13px;padding-right:13px}.toprow{display:block}.top-actions{justify-content:flex-start;margin-top:15px}.kpis{grid-template-columns:repeat(2,1fr)}.kpi .val{font-size:23px}.filters{grid-template-columns:1fr}.summary{grid-template-columns:1fr}.rankitem{grid-template-columns:28px minmax(150px,1fr) 70px}.rankitem .bar{display:none}.mobile-note{display:block}.brand h1{font-size:27px}}@media print{.navwrap,.top-actions,.filters,.no-print{display:none!important}.panel{display:block!important;page-break-before:always}.panel:first-child{page-break-before:auto}.top{background:#fff!important;color:#111!important;padding:10px 0}.pill{border:1px solid #ddd}.kpis{grid-template-columns:repeat(3,1fr)}body{background:#fff}.card,.kpi{box-shadow:none}}
 .filters-turnos{grid-template-columns:minmax(180px,1.5fr) repeat(3,minmax(140px,1fr)) auto}@media(max-width:850px){.filters-turnos{grid-template-columns:1fr 1fr}}@media(max-width:520px){.filters-turnos{grid-template-columns:1fr}}
 .enturmacao-table .unit-profile{min-width:130px;max-width:210px;white-space:normal;overflow-wrap:break-word;line-height:1.4}.enturmacao-table th.unit-profile{min-width:145px}
+
+#print-report{display:none}
+@media print{
+ @page{size:A4 landscape;margin:10mm}
+ body>header,body>.navwrap,body>main,body>.footer{display:none!important}
+ #print-report{display:block!important;color:#111;font:10pt Arial,sans-serif}
+ #print-report header{margin-bottom:7mm}
+ #print-report h1{font-size:18pt;margin:0 0 3mm}
+ #print-report h2{font-size:15pt}
+ #print-report h3{font-size:10pt;margin:3mm 0}
+ #print-report .print-section{break-before:page;page-break-before:always}
+ #print-report .print-table-block+.print-table-block{break-before:page;page-break-before:always}
+ #print-report .print-filter-note{font-size:9pt;color:#333}
+ #print-report .tablewrap,#print-report .tablewrap.tall{overflow:visible!important;max-height:none!important;height:auto!important;border:0;border-radius:0}
+ #print-report .grid2{display:block}
+ #print-report .card,#print-report .kpi{box-shadow:none;overflow:visible}
+ #print-report table{table-layout:fixed;width:100%!important;font-size:8pt;break-inside:auto}
+ #print-report th,#print-report td,#print-report .enturmacao-table .unit-profile,#print-report td.school{position:static!important;min-width:0!important;max-width:none!important;padding:2mm 1mm;font-size:8pt;white-space:normal!important;overflow-wrap:anywhere;line-height:1.25;letter-spacing:0;vertical-align:top}
+ #print-report th.school,#print-report td.school{width:22%}
+ #print-report thead{display:table-header-group}
+ #print-report tr{break-inside:avoid;page-break-inside:avoid}
+ #print-report .badge{display:inline;font-size:8pt;padding:0;border-radius:0;background:transparent}
+ #print-report .chart{height:55mm;break-inside:avoid}
+ #print-report .kpis{grid-template-columns:repeat(3,1fr)}
+ #print-report .summary{grid-template-columns:repeat(4,1fr)}
+ #print-report .mobile-note,#print-report .filters{display:none!important}
+}
 </style>
 </head><body>
-<header class="top"><div class="wrap"><div class="toprow"><div class="brand"><small>Painel público</small><h1>Matrículas — Educação em Tempo Integral</h1><p>Rede Estadual de Ensino do Tocantins · dados consolidados para consulta.</p></div><div class="top-actions"><button class="btn" onclick="sharePage()">Compartilhar</button><button class="btn" onclick="window.print()">Imprimir / PDF</button></div></div><div class="update"><span class="pill" id="lastUpdate"></span><span class="pill">Sem identificação nominal de estudantes</span><span class="pill" id="validationPill"></span></div></div></header>
+<header class="top"><div class="wrap"><div class="toprow"><div class="brand"><small>Painel público</small><h1>Matrículas — Educação em Tempo Integral</h1><p>Rede Estadual de Ensino do Tocantins · dados consolidados para consulta.</p></div><div class="top-actions"><button class="btn" onclick="sharePage()">Compartilhar</button><button class="btn" onclick="printCompleteReport()">Imprimir / PDF</button><button class="btn" onclick="exportExcel()">Exportar Excel</button></div></div><div class="update"><span class="pill" id="lastUpdate"></span><span class="pill">Sem identificação nominal de estudantes</span><span class="pill" id="validationPill"></span></div></div></header>
 <div class="navwrap"><nav class="nav" id="nav"></nav></div>
 <main>
 <section class="panel active" id="p-dashboard"></section>
@@ -86,6 +113,117 @@ function renderJornada(){const p=document.getElementById('p-jornada'),rows=D.jor
 function renderRegionais(){const a=D.regionals;document.getElementById('p-regionais').innerHTML=`<div class="sectionhead"><div><h2>Resumo por Regional</h2><div class="muted">Matrículas, turmas, capacidade e Jornada Ampliada.</div></div></div><div class="grid2"><div class="card"><div class="tablewrap"><table><thead><tr><th>SRE</th><th class="num">Escolas</th><th class="num">Turmas</th><th class="num">ETI</th><th class="num">Capacidade</th><th class="num">Ocupação</th><th class="num">Jornada</th></tr></thead><tbody>${a.map(x=>`<tr><td><b>${esc(x.sre)}</b></td><td class="num">${fmt.format(x.escolas)}</td><td class="num">${fmt.format(x.turmas)}</td><td class="num">${fmt.format(x.estudantes)}</td><td class="num">${fmt.format(x.capacidade)}</td><td class="num">${pct(x.ocupacao)}</td><td class="num">${fmt.format(x.jornada)}</td></tr>`).join('')}</tbody></table></div></div><div class="card"><h3>Regionais com mais estudantes ETI</h3>${bars(a,'estudantes','sre',12)}</div></div>`}
 function renderHistorico(){const h=D.history;document.getElementById('p-historico').innerHTML=`<div class="sectionhead"><div><h2>Histórico</h2><div class="muted">Evolução das matrículas em tempo integral.</div></div></div><div class="card"><h3>Total de estudantes integrais</h3>${lineChart(h)}</div><div class="tablewrap"><table><thead><tr><th>Data</th><th>Origem</th><th class="num">EF1 T/E</th><th class="num">EF2 T/E</th><th class="num">EPT T/E</th><th class="num">EM T/E</th><th class="num">Geral T/E</th></tr></thead><tbody>${h.map(x=>`<tr><td>${fd(x.date)}</td><td>${esc(x.label||'')}</td><td class="num">${fmt.format(x.ef1T)} / ${fmt.format(x.ef1E)}</td><td class="num">${fmt.format(x.ef2T)} / ${fmt.format(x.ef2E)}</td><td class="num">${fmt.format(x.eptT)} / ${fmt.format(x.eptE)}</td><td class="num">${fmt.format(x.emT)} / ${fmt.format(x.emE)}</td><td class="num"><b>${fmt.format(x.totalT)} / ${fmt.format(x.totalE)}</b></td></tr>`).join('')}</tbody></table></div>`}
 function renderMetodologia(){const m=D.methodology,v=D.validation;document.getElementById('p-metodologia').innerHTML=`<div class="sectionhead"><div><h2>Metodologia e transparência</h2><div class="muted">Como os indicadores deste painel são calculados.</div></div></div><div class="card"><div class="notice"><b>Privacidade</b><br>${esc(m.privacy)}</div><h3>Critérios de classificação</h3><p><b>Tempo integral:</b> ${esc(m.integral)}</p><p><b>Ensino Fundamental I:</b> ${esc(m.ef1)}</p><p><b>Ensino Fundamental II:</b> ${esc(m.ef2)}</p><p><b>Ensino Médio:</b> ${esc(m.em)}</p><p><b>EPT:</b> ${esc(m.ept)}</p><p><b>Atualização:</b> ${fd(D.updatedAt)}.</p>${v.unknownTurmas?`<div class="notice warning"><b>Validação:</b> há ${fmt.format(v.unknownTurmas)} turmas / ${fmt.format(v.unknownEstudantes)} estudantes em classificações não reconhecidas pelas regras atuais. Elas são sinalizadas para revisão antes da próxima atualização.</div>`:`<div class="notice"><b>Validação:</b> todas as turmas integrais da base atual foram enquadradas nas regras do painel.</div>`}</div>`}
+function preparePrintReport(){
+  let report=document.getElementById('print-report');
+  if(!report){report=document.createElement('div');report.id='print-report';document.body.appendChild(report)}
+  report.replaceChildren();
+  const header=document.createElement('header');
+  header.innerHTML=`<h1>Matrículas — Educação em Tempo Integral</h1><p>Rede Estadual do Tocantins · Atualização: ${esc(fd(D.updatedAt))}</p><p>Relatório completo das abas. As tabelas seguem os filtros selecionados no painel.</p>`;
+  report.appendChild(header);
+  for(const [id,title] of T){
+    const source=document.getElementById('p-'+id),section=source.cloneNode(true);
+    section.removeAttribute('id');section.className='print-section';
+    section.querySelectorAll('[id]').forEach(e=>e.removeAttribute('id'));
+    section.querySelectorAll('.filters,.mobile-note,.no-print').forEach(e=>e.remove());
+    const prefix={escolas:'esc',enturmacao:'ent',ocupacao:'ocu',ept:'ept',jornada:'jor'}[id];
+    if(prefix){
+      const filters=['q','sre','mun','turno'].map(k=>{const e=document.getElementById(prefix+'-'+k);if(!e)return '';const labels={q:'Busca',sre:'SRE',mun:'Município',turno:'Turno'};return labels[k]+': '+(e.value||(k==='turno'?'Todos os turnos':'Todos'))}).filter(Boolean).join(' · ');
+      const note=document.createElement('p');note.className='print-filter-note';note.textContent=filters;section.querySelector('.sectionhead')?.after(note);
+    }
+    section.querySelectorAll('table').forEach(table=>{
+      const width=table.tHead?.rows[0]?.cells.length||0;
+      if(width<=10)return;
+      const blocks=document.createElement('div');
+      for(let start=3;start<width;start+=7){
+        const indices=[0,1,2,...Array.from({length:Math.min(7,width-start)},(_,i)=>start+i)],group=document.createElement('div');group.className='print-table-block';
+        const caption=document.createElement('h3');caption.textContent=title+' — '+Array.from(table.tHead.rows[0].cells).slice(start,start+7).map(c=>c.textContent).join(' / ');group.appendChild(caption);
+        const split=document.createElement('table');
+        for(const part of [table.tHead,...table.tBodies]){const dest=document.createElement(part.tagName.toLowerCase());for(const row of part.rows){const tr=document.createElement('tr');for(const i of indices)tr.appendChild(row.cells[i].cloneNode(true));dest.appendChild(tr)}split.appendChild(dest)}
+        group.appendChild(split);blocks.appendChild(group);
+      }
+      table.replaceWith(blocks);
+    });
+    report.appendChild(section);
+  }
+  return report;
+}
+function printCompleteReport(){preparePrintReport();window.print()}
+window.addEventListener('beforeprint',preparePrintReport);
+
+function buildExcelSheets(){
+  const profiles=['curriculoDiferente','implantacao','programa','classificacao','cargaHoraria','etapas'];
+  const profileLabels=['Currículo diferente ETI','Ano de implantação','Programa','Classificação da unidade','Carga horária','Etapas'];
+  const idLabels=['SRE','Município','INEP','Escola'];
+  const ids=s=>[s.sre,s.municipio,String(s.inep),s.escola];
+  const fixed=s=>profiles.map(k=>unitProfile(s)[k]??null);
+  const all=(D.networkSchools||D.schools).map(s=>s.turnos?selectSchoolTurn(s,''):s);
+  const byTurn=(D.networkSchools||[]).flatMap(s=>s.turnos.map(t=>({...selectSchoolTurn(s,t.turno),turno:t.turno})));
+  const schoolHeaders=[...idLabels,...profileLabels,'Turmas','Estudantes','Capacidade','Vagas','Ocupação'];
+  const schoolRow=s=>[...ids(s),...fixed(s),s.total.t,s.total.e,s.capacidade,s.disponivel,s.ocupacao/100];
+  const keys=[...new Set([...D.schools,...byTurn].flatMap(s=>Object.keys(s.metrics)))].sort();
+  const metricName=k=>({EF1_4:'4º ano',EF1_5:'5º ano',EF2_6:'6º ano',EF2_7:'7º ano',EF2_8:'8º ano',EF2_9:'9º ano',EF2_FLUXO:'Avança EF2',EM_1:'1ª série',EM_2:'2ª série',EM_3:'3ª série',EM_FLUXO:'Avança EM',EPT_1:'1ª série EPT',EPT_2:'2ª série EPT',EPT_3:'3ª série EPT',OUTRAS:'Outras séries e modalidades'}[k]||k);
+  const entHeaders=[...idLabels,'Turno',...profileLabels,...keys.flatMap(k=>[metricName(k)+' · Turmas',metricName(k)+' · Estudantes']),'Turmas EM','Estudantes EM','Total de turmas','Total de estudantes'];
+  const entRow=(s,turno)=>[...ids(s),turno,...fixed(s),...keys.flatMap(k=>[s.metrics[k]?.t||0,s.metrics[k]?.e||0]),s.em.t,s.em.e,s.total.t,s.total.e];
+  const sheets=[];
+  const add=(name,headers,rows,percentColumns=[])=>sheets.push({name,headers,rows,percentColumns});
+  const n=D.network,s=D.snapshot,j=D.jornada;
+  add('Visão Geral',['Indicador','Valor','Data de atualização'],[
+    ['Estudantes na rede',n.estudantes,D.updatedAt],['Escolas na rede',n.escolas,D.updatedAt],['Capacidade na rede',n.capacidade,D.updatedAt],
+    ['Estudantes integrais',s.totalE,D.updatedAt],['Turmas integrais',s.totalT,D.updatedAt],['Escolas integrais',n.integralEscolas,D.updatedAt],['Capacidade integral',n.integralCapacidade,D.updatedAt],['Vagas integrais',Math.max(0,n.integralCapacidade-n.integralEstudantes),D.updatedAt],
+    ['Estudantes EF1 integral',s.ef1E,D.updatedAt],['Turmas EF1 integral',s.ef1T,D.updatedAt],['Estudantes EF2 integral',s.ef2E,D.updatedAt],['Turmas EF2 integral',s.ef2T,D.updatedAt],['Estudantes EM integral (inclui EPT)',s.emE,D.updatedAt],['Turmas EM integral (inclui EPT)',s.emT,D.updatedAt],['Estudantes EPT integral',s.eptE,D.updatedAt],['Turmas EPT integral',s.eptT,D.updatedAt],
+    ['Estudantes Jornada Ampliada',j.estudantes,D.updatedAt],['Turmas Jornada Ampliada',j.turmas,D.updatedAt],['Escolas Jornada Ampliada',j.escolas,D.updatedAt],['Capacidade Jornada Ampliada',j.capacidade,D.updatedAt]]);
+  add('Escolas da Rede',schoolHeaders,all.map(schoolRow),[schoolHeaders.length-1]);
+  add('Escolas Integrais',schoolHeaders,D.schools.map(schoolRow),[schoolHeaders.length-1]);
+  add('Enturmação Integral',entHeaders,D.schools.map(x=>entRow(x,'Integral')));
+  add('Enturmação por Turno',entHeaders,byTurn.map(x=>entRow(x,x.turno)));
+  add('Ocupação por Turno',[...idLabels,'Turno','Turmas','Cursando','Capacidade','Vagas','Ocupação'],byTurn.map(x=>[...ids(x),x.turno,x.total.t,x.cursando,x.capacidade,x.disponivel,x.ocupacao/100]),[9]);
+  add('EPT Cursos',[...idLabels,'Turma','Série','Composição','Turno','Cursando','Capacidade','Vagas'],D.eptRows.map(x=>[...ids(x),x.turma,x.serie,x.composicao,x.turno,x.cursando,x.capacidade,x.disponivel]));
+  add('Jornada Ampliada',[...idLabels,'Turmas','Estudantes','Capacidade','Ocupação'],D.jornadaSchools.map(x=>[...ids(x),x.turmas,x.estudantes,x.capacidade,x.ocupacao/100]),[7]);
+  add('Jornada por Modelo',[...idLabels,'Modelo','Turmas','Estudantes'],D.jornadaSchools.flatMap(x=>x.modelos.map(m=>[...ids(x),m.modelo,m.turmas,m.estudantes])));
+  add('Regionais',['SRE','Escolas integrais','Turmas integrais','Estudantes integrais','Capacidade integral','Ocupação integral','Estudantes Jornada Ampliada'],D.regionals.map(x=>[x.sre,x.escolas,x.turmas,x.estudantes,x.capacidade,x.ocupacao/100,x.jornada]),[5]);
+  add('Histórico',['Data','Origem','Turmas EF1','Estudantes EF1','Turmas EF2','Estudantes EF2','Turmas EPT','Estudantes EPT','Turmas EM (inclui EPT)','Estudantes EM (inclui EPT)','Total de turmas','Total de estudantes'],D.history.map(x=>[x.date,x.label,x.ef1T,x.ef1E,x.ef2T,x.ef2E,x.eptT,x.eptE,x.emT,x.emE,x.totalT,x.totalE]));
+  add('Metodologia',['Informação','Descrição'],[
+    ['Atualização',D.updatedAt],['Abrangência','Exportação completa dos dados do painel, independentemente dos filtros da tela.'],
+    ['Dados fixos das escolas','Campos da Base completa de escolas integrais. Células vazias indicam informação não preenchida ou escola fora dessa base.'],
+    ...Object.entries(D.methodology).map(([k,v])=>[({integral:'Tempo integral',ef1:'Ensino Fundamental I',ef2:'Ensino Fundamental II',em:'Ensino Médio',ept:'EPT',privacy:'Privacidade'}[k]||k),v]),
+    ['EPT e Ensino Médio','Os totais de Ensino Médio já incluem EPT. Não somar EPT novamente ao total.'],
+    ['Jornada Ampliada','Base complementar. Não somar automaticamente ao total da rede, pois pode incluir os mesmos estudantes.'],
+    ['Turmas integrais não classificadas',D.validation.unknownTurmas],['Estudantes integrais não classificados',D.validation.unknownEstudantes]]);
+  return sheets;
+}
+
+// XLSX is a ZIP of Open XML documents. Store entries without compression so
+// export works locally, without a service, an external library or a network call.
+function createExcelFile(sheets){
+  const encoder=new TextEncoder(),xml=v=>String(v??'').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g,'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[c]));
+  const col=i=>{let s='';for(i++;i;i=Math.floor((i-1)/26))s=String.fromCharCode(65+(i-1)%26)+s;return s};
+  const entries=[];const add=(name,content)=>entries.push({name:encoder.encode(name),bytes:encoder.encode(content)});
+  const ns='http://schemas.openxmlformats.org/spreadsheetml/2006/main';
+  add('[Content_Types].xml',`<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/>${sheets.map((_,i)=>`<Override PartName="/xl/worksheets/sheet${i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join('')}</Types>`);
+  add('_rels/.rels','<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>');
+  add('xl/workbook.xml',`<?xml version="1.0" encoding="UTF-8"?><workbook xmlns="${ns}" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets>${sheets.map((s,i)=>`<sheet name="${xml(s.name)}" sheetId="${i+1}" r:id="rId${i+1}"/>`).join('')}</sheets></workbook>`);
+  add('xl/_rels/workbook.xml.rels',`<?xml version="1.0"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">${sheets.map((_,i)=>`<Relationship Id="rId${i+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i+1}.xml"/>`).join('')}<Relationship Id="rId${sheets.length+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>`);
+  add('xl/styles.xml',`<?xml version="1.0"?><styleSheet xmlns="${ns}"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><color rgb="FFFFFFFF"/><name val="Calibri"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF135C37"/><bgColor indexed="64"/></patternFill></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="3"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0" applyAlignment="1"><alignment vertical="top" wrapText="1"/></xf><xf numFmtId="0" fontId="1" fillId="2" borderId="0" xfId="0" applyAlignment="1"><alignment vertical="center" wrapText="1"/></xf><xf numFmtId="10" fontId="0" fillId="0" borderId="0" xfId="0" applyNumberFormat="1" applyAlignment="1"><alignment vertical="top"/></xf></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>`);
+  sheets.forEach((sheet,i)=>{
+    const rows=[sheet.headers,...sheet.rows],last=col(sheet.headers.length-1),range=`A1:${last}${rows.length}`;
+    const columnWidths=sheet.headers.map((h,c)=>Math.min(60,Math.max(14,Math.max(h.length,...sheet.rows.map(r=>typeof r[c]==='string'?r[c].length:12))+2)));
+    const widths=columnWidths.map((w,c)=>`<col min="${c+1}" max="${c+1}" width="${w}" customWidth="1"/>`).join('');
+    const data=rows.map((row,r)=>{const lines=Math.max(1,...row.map((v,c)=>typeof v==='string'?v.split('\n').reduce((n,l)=>n+Math.max(1,Math.ceil(l.length/(columnWidths[c]-3))),0):1)),height=r===0?42:Math.min(409,Math.max(30,lines*16+6));return `<row r="${r+1}" ht="${height}" customHeight="1">${row.map((v,c)=>{const style=r===0?1:sheet.percentColumns.includes(c)?2:0,ref=col(c)+(r+1);if(v===null||v===undefined||v==='')return `<c r="${ref}" s="${style}"/>`;return typeof v==='number'&&Number.isFinite(v)?`<c r="${ref}" s="${style}"><v>${v}</v></c>`:`<c r="${ref}" s="${style}" t="inlineStr"><is><t xml:space="preserve">${xml(v)}</t></is></c>`}).join('')}</row>`}).join('');
+    add(`xl/worksheets/sheet${i+1}.xml`,`<?xml version="1.0" encoding="UTF-8"?><worksheet xmlns="${ns}"><dimension ref="${range}"/><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><sheetFormatPr defaultRowHeight="30"/><cols>${widths}</cols><sheetData>${data}</sheetData><autoFilter ref="${range}"/><pageMargins left="0.3" right="0.3" top="0.4" bottom="0.4" header="0.2" footer="0.2"/></worksheet>`);
+  });
+  const crcTable=Array.from({length:256},(_,n)=>{for(let k=0;k<8;k++)n=n&1?0xedb88320^(n>>>1):n>>>1;return n>>>0});
+  const crc=bytes=>{let n=0xffffffff;for(const b of bytes)n=crcTable[(n^b)&255]^(n>>>8);return (n^0xffffffff)>>>0};
+  const parts=[],central=[];let offset=0,centralSize=0;
+  for(const e of entries){const sum=crc(e.bytes),head=new Uint8Array(30+e.name.length),v=new DataView(head.buffer);v.setUint32(0,0x04034b50,true);v.setUint16(4,20,true);v.setUint16(6,0x800,true);v.setUint32(14,sum,true);v.setUint32(18,e.bytes.length,true);v.setUint32(22,e.bytes.length,true);v.setUint16(26,e.name.length,true);head.set(e.name,30);parts.push(head,e.bytes);
+    const c=new Uint8Array(46+e.name.length),w=new DataView(c.buffer);w.setUint32(0,0x02014b50,true);w.setUint16(4,20,true);w.setUint16(6,20,true);w.setUint16(8,0x800,true);w.setUint32(16,sum,true);w.setUint32(20,e.bytes.length,true);w.setUint32(24,e.bytes.length,true);w.setUint16(28,e.name.length,true);w.setUint32(42,offset,true);c.set(e.name,46);central.push(c);offset+=head.length+e.bytes.length;centralSize+=c.length;
+  }
+  const end=new Uint8Array(22),v=new DataView(end.buffer);v.setUint32(0,0x06054b50,true);v.setUint16(8,entries.length,true);v.setUint16(10,entries.length,true);v.setUint32(12,centralSize,true);v.setUint32(16,offset,true);
+  return new Blob([...parts,...central,end],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+}
+function exportExcel(){
+  try{const blob=createExcelFile(buildExcelSheets()),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`Painel_Matriculas_${D.updatedAt}.xlsx`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}catch(e){console.error(e);alert('Não foi possível exportar o Excel. Atualize a página e tente novamente.')}
+}
+
 async function sharePage(){const data={title:document.title,text:'Painel de Matrículas — Educação em Tempo Integral',url:location.href};try{if(navigator.share)await navigator.share(data);else{await navigator.clipboard.writeText(location.href);alert('Link copiado para a área de transferência.')}}catch(e){}}
 renderDashboard();renderEscolas();renderEnturmacao();renderOcupacao();renderEPT();renderJornada();renderRegionais();renderHistorico();renderMetodologia();nav();
 </script></body></html>
