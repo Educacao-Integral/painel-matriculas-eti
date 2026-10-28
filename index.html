@@ -152,12 +152,24 @@ function stageKeys(school){
   if(/\bEJA\b|\bCEJA\b|JOVENS E ADULTOS/.test(text))stages.add('EJA');
   if(!stages.size)stages.add('OUTRAS');return [...stages];
 }
+const profileFilterFields=[['implantacao','Ano de implantação'],['programa','Programa'],['classificacao','Classificação da unidade'],['cargaHoraria','Carga horária']];
+function profileFilterValue(profile,key){
+  const text=String(profile[key]??'').trim();if(!text)return '__NOT_INFORMED__';
+  if(key==='implantacao')return text.match(/\b(?:19|20)\d{2}\b/)?.[0]||text;
+  return key==='cargaHoraria'?text.toLocaleUpperCase('pt-BR'):text;
+}
+function profileFilterControls(prefix){
+  return profileFilterFields.map(([key,label])=>{
+    const values=[...new Set([...unitProfiles.map(p=>profileFilterValue(p,key)),'__NOT_INFORMED__'])].sort((a,b)=>a==='__NOT_INFORMED__'?1:b==='__NOT_INFORMED__'?-1:a.localeCompare(b,'pt-BR',{numeric:true}));
+    return multiSelect(prefix+'-'+key,label,values.map(value=>({value,label:value==='__NOT_INFORMED__'?'Não informado':value})));
+  }).join('');
+}
 function filterControls(prefix){
   const schools=D.networkSchools||D.schools,unique=key=>[...new Set(schools.map(s=>s[key]).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
   const turns=[...new Set((D.networkSchools||[]).flatMap(s=>s.turnos.map(t=>t.turno)))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
   const stageLabels={EF1:'EF1 · Anos iniciais',EF2:'EF2 · Anos finais',EM:'EM · Ensino Médio',EPT:'EPT · Educação profissional',EJA:'EJA · Jovens e adultos',OUTRAS:'Outras etapas'};
   const stages=[...new Set(schools.flatMap(s=>stageKeys(s.turnos?selectSchoolTurn(s,''):s)))].map(k=>({value:k,label:stageLabels[k]||k}));
-  return `<div class="filters filters-multi" id="${prefix}-filters"><input id="${prefix}-q" aria-label="Buscar escola" placeholder="Buscar escola, município ou INEP…">${multiSelect(prefix+'-sre','Regionais',unique('sre'))}${multiSelect(prefix+'-mun','Municípios',unique('municipio'))}${multiSelect(prefix+'-escola','Escolas',schools.map(s=>({value:String(s.inep),label:s.escola+' · '+s.municipio+' · '+s.inep})))}${multiSelect(prefix+'-turno','Turnos',turns,['Integral'])}${multiSelect(prefix+'-etapa','Etapas',stages)}<button class="clear" id="${prefix}-clear">Limpar</button></div><p class="muted filter-help">Marque quantas opções quiser. Dentro de cada filtro, basta corresponder a uma das opções; filtros diferentes são combinados. Etapas selecionam escolas que oferecem qualquer etapa marcada; os totais mantêm os turnos escolhidos. EPT integrado também faz parte do Ensino Médio.</p>`;
+  return `<div class="filters filters-multi" id="${prefix}-filters"><input id="${prefix}-q" aria-label="Buscar escola" placeholder="Buscar escola, município ou INEP…">${multiSelect(prefix+'-sre','Regionais',unique('sre'))}${multiSelect(prefix+'-mun','Municípios',unique('municipio'))}${multiSelect(prefix+'-escola','Escolas',schools.map(s=>({value:String(s.inep),label:s.escola+' · '+s.municipio+' · '+s.inep})))}${multiSelect(prefix+'-turno','Turnos',turns,['Integral'])}${multiSelect(prefix+'-etapa','Etapas',stages)}${prefix==='ent'?profileFilterControls(prefix):''}<button class="clear" id="${prefix}-clear">Limpar</button></div><p class="muted filter-help">Marque quantas opções quiser. Dentro de cada filtro, basta corresponder a uma das opções; filtros diferentes são combinados. Etapas selecionam escolas que oferecem qualquer etapa marcada; os totais mantêm os turnos escolhidos. EPT integrado também faz parte do Ensino Médio.</p>`;
 }
 function selectedTurnSchools(prefix){
   const turns=selectedValues(prefix+'-turno');
@@ -170,7 +182,8 @@ function matchesSchoolFilters(school,prefix,selections=schoolSelections(prefix))
 }
 function filtered(prefix){
   const q=norm(document.getElementById(prefix+'-q')?.value),stages=selectedValues(prefix+'-etapa'),selections=schoolSelections(prefix);
-  return selectedTurnSchools(prefix).filter(s=>matchesSchoolFilters(s,prefix,selections)&&(!stages.length||stageKeys(s).some(k=>stages.includes(k)))&&(!q||norm([s.escola,s.municipio,s.inep].join(' ')).includes(q)));
+  const profileSelections=prefix==='ent'?profileFilterFields.map(([key])=>[key,new Set(selectedValues(prefix+'-'+key))]).filter(([,values])=>values.size):[];
+  return selectedTurnSchools(prefix).filter(s=>matchesSchoolFilters(s,prefix,selections)&&(!stages.length||stageKeys(s).some(k=>stages.includes(k)))&&(!q||norm([s.escola,s.municipio,s.inep].join(' ')).includes(q))&&profileSelections.every(([key,values])=>values.has(profileFilterValue(unitProfile(s),key))));
 }
 function wire(prefix,draw){wireMultis(prefix,draw,true)}
 function auxiliaryFilters(prefix,rows,withModels=false){
@@ -195,14 +208,13 @@ function jornadaFilteredSchools(){
 }
 function filterDescription(prefix){
   const parts=[],q=document.getElementById(prefix+'-q')?.value;if(q)parts.push('Busca: '+q);
-  for(const [key,label] of [['sre','Regionais'],['mun','Municípios'],['escola','Escolas'],['turno','Turnos'],['etapa','Etapas'],['modelo','Modelos']]){
+  for(const [key,label] of [['sre','Regionais'],['mun','Municípios'],['escola','Escolas'],['turno','Turnos'],['etapa','Etapas'],['modelo','Modelos'],...profileFilterFields]){
     const root=document.getElementById(prefix+'-'+key);if(!root)continue;
     const labels=[...root.querySelectorAll('input[type="checkbox"]')].filter(c=>c.checked).map(c=>c.parentElement.querySelector('span').textContent);
     parts.push(label+': '+(labels.length?labels.join(', '):'Todas as opções'));
   }
   return parts.join(' · ');
 }
-
 function renderEscolas(){const p=document.getElementById('p-escolas');p.innerHTML=`<div class="sectionhead"><div><h2>Escolas</h2><div class="muted">Consulta por unidade escolar e turno. Integral selecionado inicialmente.</div></div></div>${filterControls('esc')}<div id="esc-t"></div>`;function draw(){const a=filtered('esc');document.getElementById('esc-t').innerHTML=`<div class="tablewrap tall"><table><thead><tr><th>SRE</th><th>Município</th><th>INEP</th><th class="school">Escola</th><th>Etapas</th><th class="num">Turmas</th><th class="num">Estudantes</th><th class="num">Capacidade</th><th class="num">Vagas</th><th class="num">Ocupação</th></tr></thead><tbody>${a.map(x=>`<tr><td>${esc(x.sre)}</td><td>${esc(x.municipio)}</td><td>${esc(x.inep)}</td><td class="school"><b>${esc(x.escola)}</b></td><td><span class="badge">${esc(x.etapas)}</span></td><td class="num">${fmt.format(x.total.t)}</td><td class="num"><b>${fmt.format(x.total.e)}</b></td><td class="num">${fmt.format(x.capacidade)}</td><td class="num">${fmt.format(x.disponivel)}</td><td class="num"><span class="badge ${x.ocupacao>100?'red':x.ocupacao>=95?'warn':''}">${pct(x.ocupacao)}</span></td></tr>`).join('')}</tbody></table></div><div class="muted" style="margin-top:8px">${fmt.format(a.length)} escolas exibidas</div>`}draw();wire('esc',draw)}
 const unitProfiles=JSON.parse(document.getElementById('unit-profiles').textContent);
 const profilesByInep=new Map(unitProfiles.map(x=>[String(x.inep),x]));
