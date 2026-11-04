@@ -41,6 +41,63 @@
 @media(max-width:1000px){.filters-multi{grid-template-columns:repeat(2,minmax(0,1fr))}.multi-select:nth-child(even) .multi-popup{left:0;right:auto}.multi-select:nth-child(odd) .multi-popup{left:auto;right:0}}
 @media(max-width:600px){.filters-multi{grid-template-columns:1fr}.filters-multi>input{grid-column:auto}.multi-popup,.multi-select:nth-child(n) .multi-popup{position:static;width:auto;min-width:0;margin:0;border:0;border-top:1px solid var(--line);border-radius:0 0 10px 10px;box-shadow:none}.multi-options{max-height:230px}}
 .history-chart{overflow-x:auto;overflow-y:hidden}.history-chart .point-value{font-variant-numeric:tabular-nums}@media print{#print-report .history-chart svg{min-width:0!important}}
+@media screen{
+  :root{--page-gutter:clamp(14px,2vw,36px)}
+  .wrap,.nav,main{width:100%;max-width:none;padding-left:var(--page-gutter);padding-right:var(--page-gutter)}
+  main{margin-top:22px}
+  .toprow{flex-wrap:wrap}
+  .brand{flex:1 1 40rem;min-width:0}
+  .brand h1,.brand p{overflow-wrap:break-word}
+  .top-actions{flex:0 1 auto;max-width:100%}
+  .top-actions .btn{min-height:42px}
+  .nav{overflow-x:auto;overscroll-behavior-x:contain}
+  .nav button{flex:0 0 auto;min-height:42px}
+  .panel,.kpis,.kpi,.summary,.summary>div,.grid2,.card,.filters,.filters>*{min-width:0}
+  .kpis{grid-template-columns:repeat(6,minmax(0,1fr))}
+  .summary{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .grid2{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+  .tablewrap{width:100%;max-width:100%;min-width:0;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+  .tablewrap.tall{max-height:68vh;max-height:68dvh}
+  .filters-multi{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .multi-actions{flex-wrap:wrap}
+  .kpi .lab,.kpi .sub,.summary .muted,.sectionhead .muted{overflow-wrap:break-word}
+  .sectionhead{flex-wrap:wrap}
+  .chart{max-width:100%;min-width:0}
+  .chartlabels{flex-wrap:wrap}
+}
+@media screen and (max-width:1100px){
+  .kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid2{grid-template-columns:minmax(0,1fr)}
+  .top-actions{justify-content:flex-start}
+}
+@media screen and (max-width:1000px){
+  .filters-multi{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media screen and (max-width:700px){
+  .top{padding-top:18px;padding-bottom:22px}
+  .brand h1{font-size:clamp(24px,5.5vw,32px);line-height:1.15}
+  .brand p{font-size:14px;line-height:1.45}
+  .top-actions{gap:8px}
+  .top-actions .btn,.nav button{min-height:44px}
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .kpi{padding:13px}
+  .kpi .val{font-size:clamp(23px,5.8vw,28px)}
+  .card{padding:13px}
+  .barrow{grid-template-columns:minmax(0,1fr) minmax(45px,1.5fr) 58px}
+  .barrow>span{min-width:0;overflow-wrap:anywhere}
+}
+@media screen and (max-width:600px){
+  .filters-multi{grid-template-columns:minmax(0,1fr)}
+  .filters-multi>input{grid-column:auto}
+  .summary{grid-template-columns:minmax(0,1fr)}
+  .multi-popup .multi-search{font-size:16px}
+}
+@media screen and (max-width:340px){
+  .kpis{grid-template-columns:minmax(0,1fr)}
+  .top-actions .btn{flex:1 1 100%}
+}
+
 </style>
 </head><body>
 <header class="top"><div class="wrap"><div class="toprow"><div class="brand"><small>Painel público</small><h1>Matrículas — Educação em Tempo Integral</h1><p>Rede Estadual de Ensino do Tocantins · dados consolidados para consulta.</p></div><div class="top-actions"><button class="btn" onclick="sharePage()">Compartilhar</button><button class="btn" onclick="printCompleteReport()">Imprimir / PDF</button><button class="btn" onclick="exportExcel()">Exportar Excel</button></div></div><div class="update"><span class="pill" id="lastUpdate"></span></div></div></header>
